@@ -23,7 +23,7 @@ with ZipFile('drivers.zip', mode='w') as zipobj:
     #the folder that is inside of the registry key is a subfolder of the folder we want to copy so we need to acess its parent folder.
     DSFpathparent = pathlib.Path(value[0]).parent
     try:
-        #copys any file inside of the System32 that has those prefix, this is not as efficient as i wanted but i could not find where device manager store its drivers info. 
+        #copies any file inside of the System32 that has those prefix, this is not as efficient as i wanted but i could not find where device manager store its drivers info. 
         for files in ('amd*.*','ati*.*','amf*.*','kapp*.*','mantle*.*','Rapidfire*.*','samu*.*','vulkan*.*'):
             fileliste32.extend(pathlib.Path('C:\\Windows\\System32\\').glob(files))
         #some files whe need are not in that list so i added them manually to the list.
